@@ -19,14 +19,6 @@
     "ios": "8.0"
   },
   "source_files": "LXMagicRecordCamera/Classes/**/*",
-  "public_header_files": "LXMagicRecordCamera/Classes/**/*.h",
-  "frameworks": [
-    "UIKit",
-    "AVFoundation",
-    "Photokit",
-    "CoreVideo",
-    "CoreImage"
-  ],
   "dependencies": {
     "GPUImage": [
 

@@ -10,37 +10,64 @@ import Foundation
 import AVFoundation
 import GPUImage
 
-class LXMagicRecordCamera{
-    let camera:GPUImageVideoCamera;
-    let renderView:GPUImageView;
-    let filter:GPUImageFilter;
+public class LXMagicRecordCamera: GPUImageView{
+    fileprivate var camera:GPUImageVideoCamera = GPUImageVideoCamera.init(sessionPreset: AVCaptureSessionPreset1280x720, cameraPosition: AVCaptureDevicePosition.back);
     
-    init(showView:UIView) {
+    fileprivate var filterView:GPUImageView?;
+    fileprivate var filter:GPUImageFilter = GPUImageFilter.init();
+    
+    override public init(frame: CGRect) {
+        super.init(frame:frame)
         //init camera
-        camera = GPUImageVideoCamera.init(sessionPreset: AVCaptureSessionPreset1280x720, cameraPosition: AVCaptureDevicePosition.back);
         camera.outputImageOrientation = UIInterfaceOrientation.portrait;
         camera.horizontallyMirrorFrontFacingCamera = true;
+        camera.addAudioInputsAndOutputs();
         
         //init filter
         filter = GPUImageFilter.init();
-        camera.addTarget(filter);
-        
-        //init renderView
-        renderView = GPUImageView.init(frame: showView.bounds);
-        showView.addSubview(renderView);
         
         //add renderView in filter
-        filter.addTarget(renderView);
+        camera.addTarget(filter);
+        filter.addTarget(self);
+        
+    }
+    public func initRecording(){
+        
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     //Start Camera Capture Video in Screen
-    func startCapture(){
+    public func startCapture(){
         camera.startCapture();
     }
     
     //Stop Camera Capture Video in Screen
-    func stopCapture(){
+    public func stopCapture(){
         camera.stopCapture();
     }
     
+    //Pause Camera Capture Video in Screen
+    public func pauseCapture(){
+        camera.pauseCapture();
+    }
+    
+    //Resume Camera Capture Video in Screen
+    public func resumeCapture(){
+        camera.resumeCameraCapture();
+    }
+    
+    func getVideoFilePath() -> URL {
+        
+        //let path = LXMagicRecordCame//LXMagicRecordCamera.videoPath;
+        let filePath = path?.appending("/\(Int(Date().timeIntervalSince1970)).mp4")
+        do {
+            try FileManager.default.createDirectory(atPath: path!, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            
+        }
+        return URL.init(fileURLWithPath: filePath!)
+    }
 }

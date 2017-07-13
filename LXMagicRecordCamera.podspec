@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   #   'LXMagicRecordCamera' => ['LXMagicRecordCamera/Assets/*.png']
   # }
 
-    s.public_header_files = 'LXMagicRecordCamera/Classes/**/*.h'
-    s.frameworks = 'UIKit', 'AVFoundation','Photokit','CoreVideo','CoreImage'
+    #s.public_header_files = 'LXMagicRecordCamera/Classes/**/*.h'
+#s.frameworks = 'UIKit', 'AVFoundation','Photokit','CoreVideo','CoreImage'
     s.dependency 'GPUImage' 
 end
