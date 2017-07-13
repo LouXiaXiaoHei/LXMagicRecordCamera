@@ -1,6 +1,0 @@
-framework module Pods_LXMagicRecordCamera_Tests {
-  umbrella header "Pods-LXMagicRecordCamera_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

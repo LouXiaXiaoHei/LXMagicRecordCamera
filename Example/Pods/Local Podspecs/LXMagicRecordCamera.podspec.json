@@ -1,22 +1,35 @@
 {
   "name": "LXMagicRecordCamera",
-  "version": "0.1.0",
-  "summary": "A short description of LXMagicRecordCamera.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/mr_supergift@163.com/LXMagicRecordCamera",
+  "version": "0.1.2",
+  "summary": "Camera Library",
+  "description": "This a library of iOS Camera , which Writer by LouXiaXiaoHei",
+  "homepage": "https://github.com/LouXiaXiaoHei/LXMagicRecordCamera",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "mr_supergift@163.com": "1319697214@qq.com"
+    "LouXiaXiaoHei": "mr_supergift@163.com"
   },
   "source": {
-    "git": "https://github.com/mr_supergift@163.com/LXMagicRecordCamera.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/LouXiaXiaoHei/LXMagicRecordCamera.git",
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "LXMagicRecordCamera/Classes/**/*"
+  "source_files": "LXMagicRecordCamera/Classes/**/*",
+  "public_header_files": "LXMagicRecordCamera/Classes/**/*.h",
+  "frameworks": [
+    "UIKit",
+    "AVFoundation",
+    "Photokit",
+    "CoreVideo",
+    "CoreImage"
+  ],
+  "dependencies": {
+    "GPUImage": [
+
+    ]
+  }
 }

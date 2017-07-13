@@ -1,5 +1,7 @@
 PODS:
-  - LXMagicRecordCamera (0.1.0)
+  - GPUImage (0.1.7)
+  - LXMagicRecordCamera (0.1.2):
+    - GPUImage
 
 DEPENDENCIES:
   - LXMagicRecordCamera (from `../`)
@@ -9,8 +11,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LXMagicRecordCamera: ffdb90547a6a89895e4ceb5c2322b3c61a77287d
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  LXMagicRecordCamera: 693e42a53ec62e839f3c452126b856ea679278be
 
-PODFILE CHECKSUM: 21c6c951cafee8d0a3680151aeee98d3bc57e6f4
+PODFILE CHECKSUM: e48aea0a677eb215838d08693ec6a90f9235b30a
 
 COCOAPODS: 1.2.1.beta.1
