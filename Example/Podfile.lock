@@ -1,0 +1,16 @@
+PODS:
+  - LXMagicRecordCamera (0.1.0)
+
+DEPENDENCIES:
+  - LXMagicRecordCamera (from `../`)
+
+EXTERNAL SOURCES:
+  LXMagicRecordCamera:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LXMagicRecordCamera: ffdb90547a6a89895e4ceb5c2322b3c61a77287d
+
+PODFILE CHECKSUM: 21c6c951cafee8d0a3680151aeee98d3bc57e6f4
+
+COCOAPODS: 1.2.1.beta.1

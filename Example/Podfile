@@ -1,0 +1,5 @@
+use_frameworks!
+
+target 'LXMagicRecordCamera_Example' do
+  pod 'LXMagicRecordCamera', :path => '../'
+end
