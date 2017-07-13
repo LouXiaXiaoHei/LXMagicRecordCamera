@@ -11,10 +11,12 @@ import AVFoundation
 import GPUImage
 
 public class LXMagicRecordCamera: GPUImageView{
+    
     fileprivate var camera:GPUImageVideoCamera = GPUImageVideoCamera.init(sessionPreset: AVCaptureSessionPreset1280x720, cameraPosition: AVCaptureDevicePosition.back);
     
     fileprivate var filterView:GPUImageView?;
     fileprivate var filter:GPUImageFilter = GPUImageFilter.init();
+    fileprivate var movieWriter:GPUImageMovieWriter?
     
     override public init(frame: CGRect) {
         super.init(frame:frame)
@@ -32,6 +34,9 @@ public class LXMagicRecordCamera: GPUImageView{
         
     }
     public func initRecording(){
+        let size = CGSize.init(width: LXMagicRecordCameraConfig.videoSetting["AVVideoWidthKey"] as! Int, height: LXMagicRecordCameraConfig.videoSetting["AVVideoHeightKey"] as! Int)
+        movieWriter = GPUImageMovieWriter.init(movieURL: getVideoFilePath(), size: size, fileType: AVFileTypeQuickTimeMovie, outputSettings: LXMagicRecordCameraConfig.videoSetting);
+        
         
     }
     
@@ -60,8 +65,7 @@ public class LXMagicRecordCamera: GPUImageView{
     }
     
     func getVideoFilePath() -> URL {
-        
-        //let path = LXMagicRecordCame//LXMagicRecordCamera.videoPath;
+        let path = LXMagicRecordCameraConfig.videoPath;
         let filePath = path?.appending("/\(Int(Date().timeIntervalSince1970)).mp4")
         do {
             try FileManager.default.createDirectory(atPath: path!, withIntermediateDirectories: true, attributes: nil)
