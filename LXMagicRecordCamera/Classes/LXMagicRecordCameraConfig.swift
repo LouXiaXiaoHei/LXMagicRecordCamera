@@ -17,6 +17,9 @@ class LXMagicRecordCameraConfig:NSObject {
     //Min Recording Video Time
     public static let minRecordingTime:TimeInterval = 3
     
+    //最大镜头焦距
+    public static let maxVideoZoomFactor:CGFloat = 20
+    
     //Video Setting
     public static let videoSetting:[String : Any] = [
         AVVideoCodecKey : AVVideoCodecH264,
